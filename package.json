@@ -21,8 +21,8 @@
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "cypress": "cypress open",
-        "lint": "eslint --ignore-path .gitignore . --ext .ts,.tsx",
-        "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
+        "lint": "eslint --ignore-path .eslintignore . --ext .ts,.tsx",
+        "format": "prettier --ignore-path .prettierignore --write \"**/*.{ts,tsx,css,scss}\"",
         "prepare": "husky install",
         "coverage": "react-scripts test --coverage --watchAll --collectCoverageFrom='src/components/**/*.{ts,tsx}' --collectCoverageFrom='!src/components/**/*.{types,test,spec}.{ts,tsx}'"
     },
@@ -31,7 +31,6 @@
             "react-app",
             "react-app/jest",
             "plugin:jest-dom/recommended",
-            "plugin:cypress/recommended",
             "eslint-config-prettier"
         ]
     },
