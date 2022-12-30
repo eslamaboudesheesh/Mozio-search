@@ -4,11 +4,13 @@ module.exports = {
         browser: true,
         es2021: true,
         node: true,
+        "cypress/globals": true
     },
     extends: [
         'eslint:recommended',
         'plugin:react/recommended',
         'plugin:react-hooks/recommended',
+        "plugin:cypress/recommended",
         'plugin:jsx-a11y/strict',
         'prettier',
     ],
@@ -20,7 +22,7 @@ module.exports = {
         ecmaVersion: 2021,
         sourceType: 'module',
     },
-    plugins: ['react', 'jsx-a11y', '@typescript-eslint'],
+    plugins: ['react', 'jsx-a11y', '@typescript-eslint', "cypress"],
     rules: {
         'react-hooks/exhaustive-deps': 'error',
         'no-var': 'error',

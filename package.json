@@ -20,6 +20,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
+        "cypress": "cypress open",
         "lint": "eslint --ignore-path .gitignore . --ext .ts,.tsx",
         "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx,css,scss}\"",
         "prepare": "husky install",
@@ -30,6 +31,7 @@
             "react-app",
             "react-app/jest",
             "plugin:jest-dom/recommended",
+            "plugin:cypress/recommended",
             "eslint-config-prettier"
         ]
     },
@@ -50,8 +52,10 @@
         "@commitlint/config-conventional": "^17.3.0",
         "@typescript-eslint/eslint-plugin": "^5.47.1",
         "@typescript-eslint/parser": "^5.47.1",
+        "cypress": "^12.2.0",
         "eslint": "^8.30.0",
         "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-cypress": "^2.12.1",
         "eslint-plugin-jest-dom": "^4.0.3",
         "eslint-plugin-jsx-a11y": "^6.6.1",
         "eslint-plugin-prettier": "^4.2.1",
