@@ -13,8 +13,12 @@ const initialState: InitialState = {
 };
 
 // Generates pending, fulfilled and rejected action types
-export const fetchCities = createAsyncThunk('cities/fetchCities', () => {
-    return axios.get('./cities.json').then((response: any) => response.data);
+export const fetchCities = createAsyncThunk('cities/fetchCities', (data: string) => {
+    return axios
+        .get('./cities.json')
+        .then((response: any) =>
+            data ? response.data.filter((e: any) => e[0]?.toLowerCase().includes(data)) : [],
+        );
 });
 
 const citiesSlice = createSlice({
