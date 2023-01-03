@@ -1,11 +1,18 @@
+import { Grid } from '@mui/material';
 import React from 'react';
 import './App.css';
-import Greats from './components/Greats';
+import Header from './components/Header/header';
+import SearchForm from './components/SearchForm/SearchForm';
 
 function App() {
     return (
         <div className="App">
-            <Greats name="learn react" />
+            <Grid container>
+                <Grid item xs={12}>
+                    <Header />
+                </Grid>
+            </Grid>
+            <SearchForm />
         </div>
     );
 }
