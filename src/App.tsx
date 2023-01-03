@@ -1,8 +1,9 @@
 import { Grid } from '@mui/material';
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header/header';
-import SearchForm from './components/SearchForm/SearchForm';
+// import SearchForm from './components/SearchForm/SearchForm';
 
 function App() {
     return (
@@ -11,8 +12,8 @@ function App() {
                 <Grid item xs={12}>
                     <Header />
                 </Grid>
+                <Outlet />
             </Grid>
-            <SearchForm />
         </div>
     );
 }

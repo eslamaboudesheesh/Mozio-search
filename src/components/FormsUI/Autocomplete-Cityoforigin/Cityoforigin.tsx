@@ -27,7 +27,7 @@ export const Cityoforigin = ({ name, control, label, defualtvalue }: FormInputPr
         }
     }, [defualtvalue, NewDefualtValue, dispatch]);
     const handelValue = (value: any) => {
-        return value || [];
+        return value || '';
     };
     return (
         <>

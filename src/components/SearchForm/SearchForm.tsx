@@ -9,6 +9,7 @@ import { IntermediateCities } from '../FormsUI/Autocomplete-Intermediatecities/I
 import { Cityofdestination } from '../FormsUI/Autocomplete-Cityofdestination/Cityofdestination';
 import { FormInputDate } from '../FormsUI/DataTimePicker/FormInputDate';
 import { FormInputText } from '../FormsUI/TextFieldNumber/TextFieldNumber';
+import { useNavigate } from 'react-router-dom';
 // import { useAppDispatch, useAppSelector } from '../../store/hooks';
 // import { addDataFormSubmit } from '../../features/form-submit/DataFormSubmitSlice';
 interface IFormInput {
@@ -19,13 +20,18 @@ interface IFormInput {
     NumberOfPassengers: number;
 }
 
-function SearchForm() {
+function SearchForm({ isHomepage }: any = false) {
     const [defualtValue, setdefualtValue] = useState<IFormInput>();
+    const navigate = useNavigate();
+
     const methods = useForm<IFormInput>({ defaultValues: defualtValue });
 
     const { handleSubmit, control, setValue } = methods;
     const onSubmit = (data: any) => {
         sessionStorage.setItem('defualtValue', JSON.stringify(data));
+        if (isHomepage) {
+            navigate('/SearchResult');
+        }
     };
     useEffect(() => {
         if (defualtValue == undefined) {
