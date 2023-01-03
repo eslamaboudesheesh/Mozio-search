@@ -21,7 +21,7 @@ export const IntermediateCities = ({ name, control, label }: FormInputProps) => 
     //     }
     // }, [defualtvalue]);
     const handelValue = (value: any) => {
-        return value || [];
+        return value || '';
     };
     return (
         <>
