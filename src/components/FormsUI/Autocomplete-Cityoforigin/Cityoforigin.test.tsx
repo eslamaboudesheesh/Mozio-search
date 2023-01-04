@@ -1,30 +1,30 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { fireEvent, render, renderHook, screen } from '@testing-library/react';
 import { useForm } from 'react-hook-form';
-import { Cityofdestination } from './Cityofdestination';
 
 import { Provider } from 'react-redux';
 
 import store from '../../../store/index';
 import { act } from 'react-dom/test-utils';
+import { Cityoforigin } from './Cityoforigin';
 
 const { result } = renderHook(() => useForm());
 
-describe('Cityofdestination Render', () => {
-    it('Cityofdestination render With data', async () => {
+describe('Cityoforigin Render', () => {
+    it('Cityoforigin render With data', async () => {
         render(
             <Provider store={store}>
-                <Cityofdestination control={result.current.control} label="Dest" name="dd" />{' '}
+                <Cityoforigin control={result.current.control} label="Dest" name="dd" />{' '}
             </Provider>,
         );
         const inputLabel = screen.getByLabelText(/Dest/i);
         expect(inputLabel).toBeInTheDocument();
     });
 
-    it('AutoComplete changes ', () => {
+    it('AutoComplete Cityoforigin changes ', () => {
         render(
             <Provider store={store}>
-                <Cityofdestination control={result.current.control} label="Dest" name="dd" />{' '}
+                <Cityoforigin control={result.current.control} label="Dest" name="dd" />{' '}
             </Provider>,
         );
         const autoComplete = screen.getByLabelText(/Dest/i);

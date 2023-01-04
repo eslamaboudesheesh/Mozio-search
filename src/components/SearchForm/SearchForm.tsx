@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import { Button, Container, Grid } from '@mui/material';
-// import DateTimePicker from '../FormsUI/DataTimePicker';
 
 import { useForm } from 'react-hook-form';
 import { Cityoforigin } from '../FormsUI/Autocomplete-Cityoforigin/Cityoforigin';
@@ -10,8 +9,7 @@ import { Cityofdestination } from '../FormsUI/Autocomplete-Cityofdestination/Cit
 import { FormInputDate } from '../FormsUI/DateTimePicker/FormInputDate';
 import { FormInputText } from '../FormsUI/TextFieldNumber/TextFieldNumber';
 import { useNavigate } from 'react-router-dom';
-// import { useAppDispatch, useAppSelector } from '../../store/hooks';
-// import { addDataFormSubmit } from '../../features/form-submit/DataFormSubmitSlice';
+
 interface IFormInput {
     IntermediateCities: any;
     Cityoforigin: any[];

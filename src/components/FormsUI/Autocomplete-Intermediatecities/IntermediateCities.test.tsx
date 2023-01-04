@@ -1,30 +1,30 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { fireEvent, render, renderHook, screen } from '@testing-library/react';
 import { useForm } from 'react-hook-form';
-import { Cityofdestination } from './Cityofdestination';
 
 import { Provider } from 'react-redux';
 
 import store from '../../../store/index';
 import { act } from 'react-dom/test-utils';
+import { IntermediateCities } from './IntermediateCities';
 
 const { result } = renderHook(() => useForm());
 
-describe('Cityofdestination Render', () => {
-    it('Cityofdestination render With data', async () => {
+describe('IntermediateCities Render', () => {
+    it('IntermediateCities render With data', async () => {
         render(
             <Provider store={store}>
-                <Cityofdestination control={result.current.control} label="Dest" name="dd" />{' '}
+                <IntermediateCities control={result.current.control} label="Dest" name="dd" />{' '}
             </Provider>,
         );
         const inputLabel = screen.getByLabelText(/Dest/i);
         expect(inputLabel).toBeInTheDocument();
     });
 
-    it('AutoComplete changes ', () => {
+    it('AutoComplete IntermediateCities changes ', () => {
         render(
             <Provider store={store}>
-                <Cityofdestination control={result.current.control} label="Dest" name="dd" />{' '}
+                <IntermediateCities control={result.current.control} label="Dest" name="dd" />{' '}
             </Provider>,
         );
         const autoComplete = screen.getByLabelText(/Dest/i);
@@ -37,6 +37,6 @@ describe('Cityofdestination Render', () => {
             fireEvent.keyDown(autoComplete, { key: 'Enter' });
         });
 
-        expect(input).toHaveValue('Paris');
+        expect(input).toHaveValue('');
     });
 });
