@@ -2,9 +2,9 @@ import React from 'react';
 import { Controller } from 'react-hook-form';
 import { FormInputProps } from '../FormInputProps.type';
 
-import { LocalizationProvider } from '@mui/x-date-pickers';
+import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+// import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
 import { TextField } from '@mui/material';
 
 export const FormInputDate = ({ name, control, label }: FormInputProps) => {
@@ -17,11 +17,11 @@ export const FormInputDate = ({ name, control, label }: FormInputProps) => {
                     required: 'required field',
                 }}
                 render={({ field: { onChange, value, ...rest }, fieldState: { error } }) => (
-                    <DesktopDatePicker
+                    <DatePicker
                         label={label}
                         disablePast
                         inputFormat="DD/MM/YYYY"
-                        value={value ? value : value || new Date()}
+                        value={value ? value : value || null}
                         onChange={(event) => {
                             onChange(event?.toISOString());
                         }}
