@@ -7,7 +7,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Controller } from 'react-hook-form';
 import { fetchDestCities } from '../../../features/cities-destination/citiesdestinationSlice';
-import { FormInputProps } from '../FormInputProps';
+import { FormInputProps } from '../FormInputProps.type';
 
 export const Cityofdestination = ({ name, control, label, defualtvalue }: FormInputProps) => {
     const [open, setOpen] = useState(false);

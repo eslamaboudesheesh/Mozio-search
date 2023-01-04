@@ -7,7 +7,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import CircularProgress from '@mui/material/CircularProgress';
 import { fetchInterCities } from '../../../features/intermediate-cities/IntermediateCitiesSlice';
 import { Controller } from 'react-hook-form';
-import { FormInputProps } from '../FormInputProps';
+import { FormInputProps } from '../FormInputProps.type';
 
 export const IntermediateCities = ({ name, control, label }: FormInputProps) => {
     // const [open, setOpen] = useState(false);

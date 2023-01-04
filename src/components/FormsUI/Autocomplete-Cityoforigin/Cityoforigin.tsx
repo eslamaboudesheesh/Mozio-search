@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import CircularProgress from '@mui/material/CircularProgress';
 import { Controller } from 'react-hook-form';
-import { FormInputProps } from '../FormInputProps';
+import { FormInputProps } from '../FormInputProps.type';
 import { fetchCities } from '../../../features/cities/citiesSlice';
 
 export const Cityoforigin = ({ name, control, label, defualtvalue }: FormInputProps) => {

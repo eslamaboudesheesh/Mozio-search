@@ -1,7 +1,7 @@
 import { TextField } from '@mui/material';
 import React from 'react';
 import { Controller } from 'react-hook-form';
-import { FormInputProps } from '../FormInputProps';
+import { FormInputProps } from '../FormInputProps.type';
 const handelValue = (value: any) => {
     return value || 0;
 };
