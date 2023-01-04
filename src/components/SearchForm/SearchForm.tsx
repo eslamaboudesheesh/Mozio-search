@@ -20,19 +20,27 @@ interface IFormInput {
     NumberOfPassengers: number;
 }
 
-function SearchForm({ isHomepage }: any = false) {
+function SearchForm({ formDataParams }: any = false) {
     const [defualtValue, setdefualtValue] = useState<IFormInput>();
     const navigate = useNavigate();
 
-    const methods = useForm<IFormInput>({ defaultValues: defualtValue });
+    const methods = useForm<IFormInput>({
+        defaultValues: formDataParams ? formDataParams : defualtValue,
+    });
 
     const { handleSubmit, control, setValue } = methods;
     const onSubmit = (data: any) => {
         sessionStorage.setItem('defualtValue', JSON.stringify(data));
-        if (isHomepage) {
-            navigate('/SearchResult');
-        }
+        navigate(`/SearchResult/search/${encodeURI(JSON.stringify(data))}`);
     };
+    useEffect(() => {
+        if (formDataParams) {
+            console.log(formDataParams);
+            setdefualtValue(formDataParams);
+            handelValidation(formDataParams);
+        }
+    }, [formDataParams, handelValidation]);
+
     useEffect(() => {
         if (defualtValue == undefined) {
             const element: IFormInput = JSON.parse(

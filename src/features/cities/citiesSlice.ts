@@ -15,7 +15,7 @@ const initialState: InitialState = {
 // Generates pending, fulfilled and rejected action types
 export const fetchCities = createAsyncThunk('cities/fetchCities', (data: string) => {
     return axios
-        .get('./cities.json')
+        .get('https://mozio-search-fake-api.vercel.app/data')
         .then((response: any) =>
             data ? response.data.filter((e: any) => e[0]?.toLowerCase().includes(data)) : [],
         );

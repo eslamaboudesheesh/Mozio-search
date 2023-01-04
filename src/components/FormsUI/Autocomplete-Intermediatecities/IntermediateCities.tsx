@@ -16,10 +16,10 @@ export const IntermediateCities = ({ name, control, label }: FormInputProps) => 
     const city = useAppSelector((state) => state.Intcities);
     const dispatch = useAppDispatch();
     useEffect(() => {
-        if (options.length == 0) {
+        if (city.cities.length != 0) {
             setOptions(city.cities);
         }
-    }, [city.cities, options.length]);
+    }, [city.cities]);
     const handelValue = (value: any) => {
         return value || [];
     };
