@@ -33,6 +33,7 @@ export const FormInputDate = ({ name, control, label }: FormInputProps) => {
                                 sx={{ width: '100%' }}
                                 error={!!error}
                                 helperText={error?.message}
+                                data-cy="date-trip"
                             />
                         )}
                     />

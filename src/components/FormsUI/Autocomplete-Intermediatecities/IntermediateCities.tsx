@@ -32,6 +32,7 @@ export const IntermediateCities = ({ name, control, label }: FormInputProps) => 
                     return (
                         <Autocomplete
                             multiple
+                            data-cy="multiple-Auto"
                             id="asynchronous-multiple"
                             defaultValue={[]}
                             isOptionEqualToValue={(option, value) => option[0] === value[0]}

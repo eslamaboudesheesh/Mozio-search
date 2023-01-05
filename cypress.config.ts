@@ -5,7 +5,12 @@ export default defineConfig({
         setupNodeEvents() {
             // implement node event listeners here
         },
+        baseUrl: 'http://localhost:3000/',
+        chromeWebSecurity: false,
+        defaultCommandTimeout: 25000,
+        testIsolation: false,
     },
+    chromeWebSecurity: false,
 
     component: {
         devServer: {

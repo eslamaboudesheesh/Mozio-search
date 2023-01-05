@@ -42,6 +42,7 @@ export const Cityoforigin = ({ name, control, label, defualtvalue }: FormInputPr
                         <>
                             <Autocomplete
                                 id="asynchronous-demo"
+                                data-cy="city-origin"
                                 open={open}
                                 autoComplete
                                 clearOnEscape

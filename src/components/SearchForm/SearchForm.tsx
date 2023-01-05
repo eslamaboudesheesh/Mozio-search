@@ -76,7 +76,7 @@ function SearchForm({ formDataParams }: any = false) {
         }
     }
     return (
-        <Grid container>
+        <Grid container data-cy="form-container">
             <Grid item xs={12}>
                 <Container maxWidth="md">
                     <form onSubmit={handleSubmit(onSubmit)}>

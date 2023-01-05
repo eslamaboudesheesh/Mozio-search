@@ -56,7 +56,7 @@ export const SearchResult = () => {
         return rad * c;
     }
     return (
-        <Grid container>
+        <Grid container data-cy="result-page">
             <Grid item xs={12} mb={5}>
                 {FormDataParams ? (
                     <SearchForm formDataParams={FormDataParams} />
@@ -80,7 +80,7 @@ export const SearchResult = () => {
                     <CardData dest={Dest} cityOrigin={cityOrigin} cityDest={cityDest} />
                 ) : (
                     <Grid item xs={12} textAlign={'center'} px={2} my={3}>
-                        <CircularProgress />
+                        <CircularProgress data-cy="data-loader" />
                     </Grid>
                 )}
             </Paper>

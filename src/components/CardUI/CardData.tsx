@@ -9,8 +9,9 @@ type CardContentType = {
 };
 function CardData({ dest, cityOrigin, cityDest }: CardContentType) {
     return (
-        <Card sx={{ display: 'flex' }}>
+        <Card sx={{ display: 'flex' }} data-cy="card-data">
             <CardMedia
+                data-cy="card-img"
                 component="img"
                 sx={{ width: 100 }}
                 image="/images/hero-image.jpg"
@@ -19,7 +20,7 @@ function CardData({ dest, cityOrigin, cityDest }: CardContentType) {
             />
 
             <CardContent sx={{ flex: '1 0 auto', textAlign: 'start' }}>
-                <Typography component="div" variant="h5">
+                <Typography component="div" variant="h5" data-cy="dest-route">
                     From {cityOrigin} to {cityDest}
                 </Typography>
                 <Typography
@@ -33,7 +34,7 @@ function CardData({ dest, cityOrigin, cityDest }: CardContentType) {
             </CardContent>
 
             <CardContent sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center' }}>
-                <Typography component="div" variant="h5">
+                <Typography component="div" variant="h5" data-cy="dest-km">
                     <strong>
                         <Chip
                             label={`${dest} K.M `}
