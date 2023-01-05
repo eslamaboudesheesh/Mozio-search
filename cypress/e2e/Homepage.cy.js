@@ -2,11 +2,10 @@
 
 describe("Home page", () => {
     // page run
-    beforeEach(() => {
-        cy.visit('/')
-    })
+
     it("loading page in desktop Viewport", () => {
         cy.viewport(1280, 720);
+        cy.visit('/')
         cy.url().should('contains', '/');
     });
     // header is exist
@@ -48,7 +47,19 @@ describe("Home page", () => {
         cy.get("[data-cy='date-trip'] label ").contains('Date of the trip');
     });
     // submit form 
+
+    it('check if submit with invalid data  ', () => {
+        cy.window().then((win) => {
+            win.sessionStorage.clear()
+        })
+        cy.visit('/')
+        cy.get("[data-cy='form-container']").should('exist');
+        cy.contains("Submit").click();
+        cy.get("[data-cy='form-container']").should('contain', "required field");
+    })
+
     it('check if submit with correct data  ', () => {
+
         cy.get("[data-cy='city-origin']").should('exist');
         cy.get("[data-cy='city-origin']").click();
         cy.get("[data-cy='city-origin']").type("Paris")
