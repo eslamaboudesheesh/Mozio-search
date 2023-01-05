@@ -1,6 +1,6 @@
 /// <reference types="cypress"/>
 
-describe("Home page", () => {
+describe("Result page", () => {
     // page run
 
     it("loading page in desktop Viewport", () => {
